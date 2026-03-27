@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- ===== META / SEO ===== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brigadeiro Gourmet — E-Book Completo | Receitas + Negócio</title>
+  <meta name="description" content="Descubra o segredo dos brigadeiros gourmet que estão fazendo pessoas lucrarem de casa. E-book completo com +20 receitas e guia de negócio. Acesso imediato por R$ 27." />
+  <meta property="og:title" content="Brigadeiro Gourmet — E-Book Completo" />
+  <meta property="og:description" content="Mais de 20 receitas gourmet + guia completo de como vender e lucrar de casa." />
+  <meta property="og:image" content="arquivo/B-GOURMET-TOPO.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- ===== FONTES GOOGLE ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,400;0,700;0,900;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== VARIÁVEIS DE CORES ===== */
+    :root {
+      --dourado:       #F5A800;
+      --dourado-brilho:#FFD000;
+      --marrom-escuro: #1A1006;
+      --fundo:         #0D0902;
+      --chocolate:     #8B4513;
+      --branco:        #FFFFFF;
+      --cinza-claro:   #dddddd;
+      --sombra-dourada:0 4px 24px rgba(245,168,0,0.35);
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--fundo);
+      color: var(--branco);
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== UTILITÁRIOS ===== */
+    .container { width: 92%; max-width: 1100px; margin: 0 auto; }
+    .text-gold { color: var(--dourado); }
+    .text-center { text-align: center; }
+
+    /* ===== ANIMAÇÃO DE ENTRADA (Intersection Observer) ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== BOTÃO CTA ===== */
+    .btn-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #FFE03A, var(--dourado));
+      color: #1A1006;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      letter-spacing: 1px;
+      padding: 20px 40px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 6px 28px rgba(245,168,0,0.45), inset 0 1px 0 rgba(255,255,255,0.3);
+      transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .btn-cta:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 10px 40px rgba(255,208,0,0.65), inset 0 1px 0 rgba(255,255,255,0.3);
+      filter: brightness(1.07);
+    }
+    .btn-cta:active { transform: scale(0.97); }
+    .btn-cta.btn-lg {
+      font-size: clamp(1.05rem, 2.8vw, 1.3rem);
+      padding: 22px 52px;
+    }
+    /* Botão de bloco oferta — largura total, mas sem quebrar texto */
+    .btn-cta.btn-oferta {
+      width: 100%;
+      max-width: 560px;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      padding: 24px 32px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* ===== DIVISOR DOURADO ===== */
+    .divider {
+      width: 70px; height: 4px;
+      background: linear-gradient(90deg, var(--dourado), var(--dourado-brilho));
+      border-radius: 2px;
+      margin: 18px auto;
+    }
+
+    /* ===== SEÇÃO TÍTULO PADRÃO ===== */
+    .section-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      letter-spacing: 1.5px;
+      line-height: 1.1;
+      color: var(--dourado);
+    }
+    .section-subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--cinza-claro);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ============================================================
+       BLOCO 1 — HERO / TOPO
+    ============================================================ */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: url('arquivo/B-GOURMET-TOPO.jpg') center center / cover no-repeat;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(120deg, rgba(13,9,2,0.93) 50%, rgba(26,16,6,0.55) 100%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 100px 0 60px;
+    }
+    @media (min-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr 1fr; padding: 120px 0 80px; }
+    }
+    .hero-logo { width: min(200px, 55vw); margin-bottom: 24px; }
+    .hero-headline {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(2.4rem, 7vw, 4.2rem);
+      color: var(--dourado-brilho);
+      line-height: 1.0;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.6);
+    }
+    .hero-subheadline {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--cinza-claro);
+      margin: 18px 0 32px;
+      max-width: 520px;
+    }
+    .hero-img { border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.7); }
+
+    /* Barra topo fixa */
+    .top-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: rgba(13,9,2,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(245,168,0,0.2);
+      padding: 10px 0;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .top-bar-logo { height: 40px; }
+    .top-bar-cta {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      background: var(--dourado);
+      color: var(--marrom-escuro);
+      padding: 8px 18px;
+      border-radius: 50px;
+    }
+    .top-bar-cta:hover { filter: brightness(1.1); }
+
+    /* ============================================================
+       BLOCO 2 — VSL / VÍDEO
+    ============================================================ */
+    #vsl {
+      padding: 70px 0;
+      background: linear-gradient(180deg, var(--marrom-escuro) 0%, var(--fundo) 100%);
+      text-align: center;
+    }
+    .vsl-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-bottom: 14px;
+    }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 820px;
+      margin: 24px auto 0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 60px rgba(245,168,0,0.25);
+      border: 2px solid rgba(245,168,0,0.3);
+      background: #000;
+    }
+    .video-wrapper video {
+      width: 100%;
+      display: block;
+      border-radius: 14px;
+    }
+
+    /* ============================================================
+       BLOCO 3 — PROBLEMA / DOR
+    ============================================================ */
+    #problema {
+      padding: 80px 0;
+      background: url('arquivo/B-GOURMET-BLOCO-02.jpg') center center / cover no-repeat;
+      position: relative;
+    }
+    #problema::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: rgba(13,9,2,0.88);
+    }
+    #problema .container { position: relative; z-index: 1; }
+    .dores-list { list-style: none; margin: 32px 0; }
+    .dores-list li {
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      padding: 14px 20px;
+      margin-bottom: 12px;
+      background: rgba(255,255,255,0.05);
+      border-left: 3px solid #c0392b;
+      border-radius: 8px;
+      backdrop-filter: blur(4px);
+    }
+    .dores-list li span.icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
+    .transicao-texto {
+      font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+      color: var(--dourado);
+      font-style: italic;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 36px;
+      padding: 20px;
+      border: 1px solid rgba(245,168,0,0.4);
+      border-radius: 12px;
+      background: rgba(245,168,0,0.06);
+    }
+
+    /* ============================================================
+       BLOCO 4 — SOLUÇÃO / PRODUTO
+    ============================================================ */
+    #solucao {
+      padding: 80px 0;
+      background: var(--marrom-escuro);
+    }
+    .solucao-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .solucao-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .solucao-img {
+      border-radius: 16px;
+      box-shadow: var(--sombra-dourada), 0 20px 50px rgba(0,0,0,0.5);
+      transition: transform 0.4s ease;
+    }
+    .solucao-img:hover { transform: scale(1.03) rotate(-1deg); }
+    .solucao-desc {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--cinza-claro);
+      margin: 20px 0 32px;
+      line-height: 1.8;
+    }
+
+    /* ============================================================
+       BLOCO 5 — CONTEÚDO DO E-BOOK
+    ============================================================ */
+    #conteudo {
+      padding: 80px 0;
+      background: url('arquivo/B-GOURMET-BLOCO-03.jpg') center center / cover no-repeat;
+      position: relative;
+    }
+    #conteudo::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: rgba(13,9,2,0.9);
+    }
+    #conteudo .container { position: relative; z-index: 1; }
+    .capitulos-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 40px;
+    }
+    @media (min-width: 600px) { .capitulos-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 900px) { .capitulos-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .cap-card {
+      background: rgba(245,168,0,0.07);
+      border: 1px solid rgba(245,168,0,0.25);
+      border-radius: 14px;
+      padding: 24px 20px;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .cap-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sombra-dourada);
+      border-color: var(--dourado);
+    }
+    .cap-card .cap-icon { font-size: 2rem; margin-bottom: 10px; }
+    .cap-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--dourado);
+      margin-bottom: 8px;
+    }
+    .cap-card p { font-size: 0.9rem; color: var(--cinza-claro); line-height: 1.6; }
+    .receitas-tags {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+    }
+    .receitas-tags span {
+      background: rgba(245,168,0,0.15);
+      border: 1px solid rgba(245,168,0,0.3);
+      color: var(--dourado);
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    /* ============================================================
+       BLOCO 6 — DEPOIMENTOS
+    ============================================================ */
+    #depoimentos {
+      padding: 80px 0;
+      background: linear-gradient(180deg, var(--fundo) 0%, var(--marrom-escuro) 100%);
+    }
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    @media (min-width: 768px) { .depoimentos-grid { grid-template-columns: repeat(3, 1fr); } }
+    .depoimento-card {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      border: 2px solid rgba(245,168,0,0.2);
+      transition: transform 0.3s, border-color 0.3s;
+      background: #111;
+    }
+    .depoimento-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--dourado);
+    }
+    .depoimento-card img {
+      width: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ============================================================
+       BLOCO 7 — RÉGUA DE BENEFÍCIOS
+    ============================================================ */
+    #beneficios {
+      padding: 70px 0;
+      background: var(--fundo);
+      border-top: 1px solid rgba(245,168,0,0.15);
+      border-bottom: 1px solid rgba(245,168,0,0.15);
+    }
+    .beneficios-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-top: 40px;
+    }
+    @media (min-width: 600px) { .beneficios-grid { grid-template-columns: repeat(3, 1fr); } }
+    .beneficio-item { text-align: center; }
+    .beneficio-item .b-icon {
+      font-size: 3rem;
+      margin-bottom: 14px;
+      display: block;
+      filter: drop-shadow(0 0 8px var(--dourado));
+    }
+    .beneficio-item h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--dourado);
+      margin-bottom: 8px;
+    }
+    .beneficio-item p { font-size: 0.95rem; color: var(--cinza-claro); }
+
+    /* ============================================================
+       BLOCO 8 — OFERTA / PREÇO
+    ============================================================ */
+    #oferta {
+      padding: 80px 0;
+      background: url('arquivo/B-GOURMET-BLOCO-PRECO.jpg') center center / cover no-repeat;
+      position: relative;
+    }
+    #oferta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: rgba(13,9,2,0.91);
+    }
+    #oferta .container { position: relative; z-index: 1; }
+    .oferta-box {
+      max-width: 640px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.04);
+      border: 2px solid rgba(245,168,0,0.5);
+      border-radius: 24px;
+      padding: 50px 40px;
+      text-align: center;
+      box-shadow: 0 0 80px rgba(245,168,0,0.2);
+    }
+    @media (max-width: 500px) { .oferta-box { padding: 36px 20px; } }
+    .preco-de {
+      font-size: 1.2rem;
+      color: #999;
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    .preco-por {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(3.5rem, 10vw, 5.5rem);
+      color: var(--dourado-brilho);
+      line-height: 1;
+      text-shadow: 0 0 30px rgba(255,208,0,0.5);
+      letter-spacing: 2px;
+    }
+    .preco-desc {
+      font-size: 1rem;
+      color: var(--cinza-claro);
+      margin: 10px 0 28px;
+    }
+    .pagamentos {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 24px 0 10px;
+    }
+    .pagamentos span {
+      font-size: 0.8rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 5px 12px;
+      border-radius: 6px;
+      color: #ccc;
+    }
+    .seguranca-texto {
+      font-size: 0.88rem;
+      color: #aaa;
+      margin-top: 16px;
+    }
+
+    /* ============================================================
+       BLOCO 9 — GARANTIA
+    ============================================================ */
+    #garantia {
+      padding: 80px 0;
+      background: var(--marrom-escuro);
+    }
+    .garantia-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 36px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    @media (min-width: 768px) {
+      .garantia-inner { flex-direction: row; text-align: left; }
+    }
+    .garantia-img {
+      width: min(220px, 55vw);
+      flex-shrink: 0;
+      filter: drop-shadow(0 8px 24px rgba(245,168,0,0.3));
+    }
+    .garantia-texto h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      color: var(--dourado);
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    .garantia-texto p {
+      font-size: 1.05rem;
+      color: var(--cinza-claro);
+      line-height: 1.8;
+    }
+
+    /* ============================================================
+       BLOCO 10 — FAQ
+    ============================================================ */
+    #faq {
+      padding: 80px 0;
+      background: var(--fundo);
+    }
+    .faq-list { max-width: 800px; margin: 40px auto 0; }
+    .faq-item {
+      border: 1px solid rgba(245,168,0,0.2);
+      border-radius: 12px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: rgba(245,168,0,0.07);
+      border: none;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+      color: var(--branco);
+      text-align: left;
+      transition: background 0.25s;
+    }
+    .faq-question:hover { background: rgba(245,168,0,0.12); }
+    .faq-question .faq-arrow {
+      font-size: 1.2rem;
+      color: var(--dourado);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+      font-size: 0.97rem;
+      color: var(--cinza-claro);
+      line-height: 1.7;
+      padding: 0 24px;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 16px 24px 20px;
+    }
+
+    /* ============================================================
+       BLOCO 11 — CTA FINAL / RODAPÉ
+    ============================================================ */
+    #cta-final {
+      padding: 90px 0 60px;
+      background: linear-gradient(180deg, var(--marrom-escuro), #0D0902);
+      text-align: center;
+    }
+    #cta-final h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(2.5rem, 7vw, 4rem);
+      color: var(--dourado-brilho);
+      letter-spacing: 2px;
+      text-shadow: 0 0 40px rgba(255,208,0,0.3);
+      margin-bottom: 12px;
+    }
+    #cta-final p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--cinza-claro);
+      margin-bottom: 36px;
+    }
+
+    footer {
+      background: #060401;
+      padding: 30px 0;
+      border-top: 1px solid rgba(245,168,0,0.12);
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+    }
+    .footer-logo { width: 100px; opacity: 0.7; }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-links a {
+      font-size: 0.82rem;
+      color: #888;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--dourado); }
+    .footer-copy { font-size: 0.8rem; color: #555; }
+
+    /* ===== PULSE ANIMAÇÃO CTA ===== */
+    @keyframes pulse-gold {
+      0%, 100% { box-shadow: 0 4px 24px rgba(245,168,0,0.4); }
+      50%       { box-shadow: 0 4px 48px rgba(255,208,0,0.75); }
+    }
+    .btn-cta.btn-lg { animation: pulse-gold 2.5s ease-in-out infinite; }
+
+    /* ===== CONTADOR / URGÊNCIA ===== */
+    .urgencia-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(192,57,43,0.18);
+      border: 1px solid #c0392b;
+      color: #ff6b6b;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: 50px;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+    .urgencia-badge span.dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #ff4444;
+      animation: blink 1s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    @keyframes blink {
+      0%,100% { opacity: 1; } 50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== BARRA TOPO FIXA ===== -->
+  <nav class="top-bar" role="navigation" aria-label="Barra de navegação">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+      <img src="arquivo/LOGO-BRIGADEIRO.png" alt="Brigadeiro Gourmet" class="top-bar-logo" loading="lazy" />
+      <a href="https://pay.cakto.com.br/tf27rur_821091" class="top-bar-cta" id="nav-cta">COMPRAR AGORA</a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       BLOCO 1 — HERO / TOPO
+  ============================================================ -->
+  <section id="hero" aria-label="Hero principal">
+    <div class="container">
+      <div class="hero-inner">
+
+        <!-- Coluna texto -->
+        <div class="fade-up">
+          <img src="arquivo/LOGO-BRIGADEIRO.png" alt="Logo Brigadeiro Gourmet" class="hero-logo" loading="eager" />
+          <h1 class="hero-headline">
+            Descubra o Segredo dos Brigadeiros Gourmet que Estão Fazendo Pessoas&nbsp;<span class="text-gold">Lucrarem de Casa</span>
+          </h1>
+          <p class="hero-subheadline">
+            E-book completo com receitas exclusivas + guia completo de como vender e lucrar — acesso imediato após a compra.
+          </p>
+          <a href="https://pay.cakto.com.br/tf27rur_821091" class="btn-cta btn-lg" id="hero-cta">
+            QUERO COMEÇAR AGORA →
+          </a>
+        </div>
+
+        <!-- Coluna imagem e-book -->
+        <div class="fade-up" style="transition-delay:0.15s;">
+          <img src="arquivo/IMG-B-GOURMET-01.png" alt="E-book Brigadeiro Gourmet" class="hero-img" loading="eager" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BLOCO 2 — VSL / VÍDEO DE VENDAS
+  ============================================================ -->
+  <section id="vsl" aria-label="Vídeo de vendas">
+    <div class="container">
+      <p class="vsl-label fade-up">▶ Assista ao vídeo abaixo antes de continuar:</p>
+      <h2 class="section-title text-center fade-up">
+        Veja Como Funciona o E-Book
+      </h2>
+      <!-- Player de vídeo local — arquivo/Vídeo-de-vendas.mp4 -->
+      <div class="video-wrapper fade-up">
+        <video
+          controls
+          preload="metadata"
+          poster="arquivo/VSL-B-GOURMET.jpg"
+          aria-label="Vídeo de Vendas — Brigadeiro Gourmet">
+          <source src="arquivo/V%C3%ADdeo-de-vendas.mp4" type="video/mp4" />
+          <source src="arquivo/Video-de-vendas.mp4" type="video/mp4" />
+          Seu navegador não suporta o elemento de vídeo.
+        </video>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BLOCO 3 — PROBLEMA / DOR
+  ============================================================ -->
+  <section id="problema" aria-label="Bloco de dores">
+    <div class="container">
+      <h2 class="section-title text-center fade-up">
+        Você já tentou fazer brigadeiro gourmet e <span class="text-gold">não conseguiu o resultado esperado?</span>
+      </h2>
+      <div class="divider fade-up"></div>
+
+      <ul class="dores-list fade-up" role="list">
+        <li><span class="icon">❌</span> Não sabe quais ingredientes usar para o resultado gourmet</li>
+        <li><span class="icon">❌</span> Nunca conseguiu o ponto certo da massa</li>
+        <li><span class="icon">❌</span> Não sabe como precificar corretamente para vender com lucro</li>
+        <li><span class="icon">❌</span> Não tem ideia de onde encontrar clientes</li>
+        <li><span class="icon">❌</span> Sua receita não tem o visual sofisticado que os clientes esperam</li>
+      </ul>
+
+      <p class="transicao-texto fade-up">
+        💡 Se você se identificou com algum desses pontos, esse e-book foi feito exatamente para você.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BLOCO 4 — SOLUÇÃO / APRESENTAÇÃO DO PRODUTO
+  ============================================================ -->
+  <section id="solucao" aria-label="Apresentação do produto">
+    <div class="container">
+      <div class="solucao-grid">
+        <div class="fade-up">
+          <img src="arquivo/IMG-B-GOURMET-02.webp" alt="E-Book Brigadeiro Gourmet Mockup" class="solucao-img" loading="lazy" />
+        </div>
+        <div class="fade-up" style="transition-delay:0.15s;">
+          <h2 class="section-title">
+            Apresentamos o E-Book Completo:<br /><span class="text-gold">Brigadeiro Gourmet</span>
+          </h2>
+          <div class="divider" style="margin-left:0;"></div>
+          <p class="solucao-desc">
+            Um guia completo com mais de <strong>20 receitas detalhadas</strong>, técnicas profissionais e estratégias práticas para você começar a lucrar hoje mesmo — direto da sua cozinha, sem experiência prévia.
+          </p>
+          <a href="https://pay.cakto.com.br/tf27rur_821091" class="btn-cta" id="solucao-cta">
+            QUERO MEU E-BOOK AGORA ✅
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BLOCO 5 — CONTEÚDO DO E-BOOK
+  ============================================================ -->
+  <section id="conteudo" aria-label="Conteúdo do e-book">
+    <div class="container">
+      <h2 class="section-title text-center fade-up">O que está <span class="text-gold">dentro do e-book</span></h2>
+      <div class="divider fade-up"></div>
+      <p class="section-subtitle text-center fade-up" style="margin-bottom:0;">
+        Tudo o que você precisa para dominar e lucrar com brigadeiros gourmet.
+      </p>
+
+      <div class="capitulos-grid">
+
+        <div class="cap-card fade-up">
+          <div class="cap-icon">📖</div>
+          <h3>✅ Capítulo 1 — O Que é Brigadeiro Gourmet</h3>
+          <p>Entenda por que o brigadeiro gourmet vale tanto e por que o mercado cresceu tanto nos últimos anos.</p>
+        </div>
+
+        <div class="cap-card fade-up">
+          <div class="cap-icon">🍴</div>
+          <h3>✅ Capítulo 2 — Utensílios Essenciais</h3>
+          <p>Quais equipamentos e ingredientes você realmente precisa para produzir com qualidade profissional.</p>
+        </div>
+
+        <div class="cap-card fade-up">
+          <div class="cap-icon">🍫</div>
+          <h3>✅ Capítulo 3 — +20 Receitas Completas</h3>
+          <p>Passo a passo detalhado de cada receita com modo de preparo e dicas de apresentação.</p>
+          <div class="receitas-tags">
+            <span>Kit Kat</span><span>Ovomaltine</span><span>Whisky</span>
+            <span>Limão</span><span>Nutella</span><span>Paçoca</span>
+            <span>Caipirinha</span><span>Churros</span><span>Pistache</span>
+            <span>Oreo</span><span>Cappuccino</span><span>Sem Açúcar</span>
+            <span>Coco</span><span>Café</span><span>Maracujá</span>
+            <span>e muito mais!</span>
+          </div>
+        </div>
+
+        <div class="cap-card fade-up">
+          <div class="cap-icon">💰</div>
+          <h3>✅ Capítulo 4 — Como Calcular Seu Lucro</h3>
+          <p>Aprenda a precificar corretamente e alcance margem de lucro entre <strong>40% e 60%</strong> por produto.</p>
+        </div>
+
+        <div class="cap-card fade-up">
+          <div class="cap-icon">🛒</div>
+          <h3>✅ Capítulo 5 — Onde e Como Vender</h3>
+          <p>Estratégias práticas para encontrar clientes, seja pela vizinhança, eventos ou canais digitais.</p>
+        </div>
+
+        <div class="cap-card fade-up">
+          <div class="cap-icon">📢</div>
+          <h3>✅ Capítulo 6 — Como Divulgar Online</h3>
+          <p>Use Instagram, Facebook e WhatsApp para atrair clientes e escalar suas vendas de brigadeiro.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BLOCO 6 — DEPOIMENTOS / PROVA SOCIAL
+  ============================================================ -->
+  <section id="depoimentos" aria-label="Depoimentos de clientes">
+    <div class="container">
+      <h2 class="section-title text-center fade-up">Veja o que estão dizendo <span class="text-gold">quem já tem o e-book:</span></h2>
+      <div class="divider fade-up"></div>
+
+      <div class="depoimentos-grid">
+        <div class="depoimento-card fade-up">
+          <img src="arquivo/Imagem-do-WhatsApp-de-2023-02-06-as-15.56.18.jpg" alt="Depoimento cliente 1 — Brigadeiro Gourmet" loading="lazy" />
+        </div>
+        <div class="depoimento-card fade-up" style="transition-delay:0.1s;">
+          <img src="arquivo/Imagem-do-WhatsApp-de-2023-02-06-as-15.59.09.jpg" alt="Depoimento cliente 2 — Brigadeiro Gourmet" loading="lazy" />
+        </div>
+        <div class="depoimento-card fade-up" style="transition-delay:0.2s;">
+          <img src="arquivo/Imagem-do-WhatsApp-de-2023-02-06-as-16.02.32.jpg" alt="Depoimento cliente 3 — Brigadeiro Gourmet" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BLOCO 7 — RÉGUA DE BENEFÍCIOS
+  ============================================================ -->
+  <section id="beneficios" aria-label="Benefícios e garantias">
+    <div class="container">
+      <div class="beneficios-grid">
+        <div class="beneficio-item fade-up">
+          <span class="b-icon">🛡️</span>
+          <h3>Garantia de 7 Dias</h3>
+          <p>Ou seu dinheiro de volta, sem perguntas e sem burocracia alguma.</p>
+        </div>
+        <div class="beneficio-item fade-up" style="transition-delay:0.1s;">
+          <span class="b-icon">⚡</span>
+          <h3>Acesso Imediato</h3>
+          <p>Receba o produto em minutos, diretamente no seu e-mail, após o pagamento.</p>
+        </div>
+        <div class="beneficio-item fade-up" style="transition-delay:0.2s;">
+          <span class="b-icon">🔒</span>
+          <h3>Pagamento Seguro</h3>
+          <p>Site certificado SSL — seus dados estão 100% protegidos em todas as etapas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BLOCO 8 — OFERTA / PREÇO
+  ============================================================ -->
+  <section id="oferta" aria-label="Oferta e preço">
+    <div class="container">
+      <div class="oferta-box fade-up">
+        <div class="urgencia-badge">
+          <span class="dot"></span> Oferta por tempo limitado — Vagas encerrando!
+        </div>
+        <h2 class="section-title" style="color:var(--branco);font-size:clamp(1.6rem,4vw,2.4rem);">
+          Acesse agora o e-book completo:
+        </h2>
+        <p class="preco-de">De R$ 97,00</p>
+        <p class="preco-por">R$ 27<span style="font-size:40%;vertical-align:middle;">,00</span></p>
+        <p class="preco-desc">Pagamento único · Acesso imediato · Para sempre</p>
+
+        <a href="https://pay.cakto.com.br/tf27rur_821091" class="btn-cta btn-oferta" id="oferta-cta">
+          ✅ SIM! QUERO MEU E-BOOK POR R$ 27 →
+        </a>
+
+        <div class="pagamentos">
+          <span>💳 Cartão de Crédito</span>
+          <span>⚡ PIX</span>
+        </div>
+
+        <p class="seguranca-texto">🔒 Compra 100% segura &nbsp;|&nbsp; ✅ Garantia incondicional de 7 dias</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BLOCO 9 — GARANTIA
+  ============================================================ -->
+  <section id="garantia" aria-label="Garantia de 7 dias">
+    <div class="container">
+      <div class="garantia-inner">
+        <img src="arquivo/SELO-BLOCO-08-3.png" alt="Selo Garantia 7 Dias" class="garantia-img fade-up" loading="lazy" />
+        <div class="garantia-texto fade-up" style="transition-delay:0.15s;">
+          <h2>Garantia Incondicional de 7 Dias</h2>
+          <p>
+            Se por qualquer motivo você não ficar satisfeito com o conteúdo do e-book, devolvemos <strong>100% do seu dinheiro</strong> — sem burocracia, sem questionamentos e sem nenhuma letra miúda. Você não tem nada a perder.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BLOCO 10 — FAQ
+  ============================================================ -->
+  <section id="faq" aria-label="Perguntas frequentes">
+    <div class="container">
+      <h2 class="section-title text-center fade-up">Perguntas <span class="text-gold">Frequentes</span></h2>
+      <div class="divider fade-up"></div>
+
+      <div class="faq-list" role="list">
+
+        <div class="faq-item fade-up" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            O e-book é enviado fisicamente?
+            <span class="faq-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-answer">
+            Não. É 100% digital. Você recebe o link de acesso por e-mail imediatamente após o pagamento confirmado — sem espera e sem frete.
+          </div>
+        </div>
+
+        <div class="faq-item fade-up" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            Preciso ter experiência prévia com culinária?
+            <span class="faq-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-answer">
+            Não! As receitas são explicadas passo a passo, de forma simples e didática, para quem está começando agora. Qualquer pessoa consegue seguir e obter resultados.
+          </div>
+        </div>
+
+        <div class="faq-item fade-up" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            O e-book funciona para iniciantes?
+            <span class="faq-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-answer">
+            Com certeza! Todo o conteúdo foi pensado para quem está começando do zero. As receitas são explicadas de forma clara e prática, com dicas de apresentação que farão seus brigadeiros parecerem profissionais.
+          </div>
+        </div>
+
+        <div class="faq-item fade-up" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            Quais formas de pagamento são aceitas?
+            <span class="faq-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-answer">
+            Aceitamos cartão de crédito (parcelado ou à vista) e PIX. O pagamento é processado em ambiente 100% seguro com criptografia SSL.
+          </div>
+        </div>
+
+        <div class="faq-item fade-up" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            A garantia de 7 dias é real?
+            <span class="faq-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-answer">
+            100% real. Se dentro de 7 dias após a compra você não estiver satisfeito por qualquer motivo, basta entrar em contato e faremos o reembolso integral e imediato, sem nenhuma pergunta.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BLOCO 11 — CTA FINAL
+  ============================================================ -->
+  <section id="cta-final" aria-label="Chamada final para ação">
+    <div class="container">
+      <div class="fade-up">
+        <div class="urgencia-badge" style="margin:0 auto 20px;">
+          <span class="dot"></span> Não perca essa oportunidade!
+        </div>
+        <h2>Centenas de Pessoas Já Estão Lucrando.<br /><span class="text-gold">Só Falta Você.</span></h2>
+        <p>Acesse agora o e-book completo e comece sua jornada no mundo dos brigadeiros gourmet.</p>
+        <a href="https://pay.cakto.com.br/tf27rur_821091" class="btn-cta btn-lg" id="final-cta">
+          QUERO COMEÇAR AGORA →
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       RODAPÉ
+  ============================================================ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <img src="arquivo/LOGO-BRIGADEIRO.png" alt="Brigadeiro Gourmet" class="footer-logo" loading="lazy" />
+        <nav class="footer-links" aria-label="Links do rodapé">
+          <a href="#" id="link-privacidade">Política de Privacidade</a>
+          <a href="#" id="link-termos">Termos de Uso</a>
+          <a href="mailto:contato@brigadeirogourmet.com.br" id="link-contato">Contato</a>
+        </nav>
+        <p class="footer-copy">© 2024 Brigadeiro Gourmet. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       SCRIPTS — Intersection Observer + FAQ Accordion
+  ============================================================ -->
+  <script>
+    /* ===== ANIMAÇÃO NO SCROLL — Intersection Observer ===== */
+    const fadeEls = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // dispara apenas uma vez
+        }
+      });
+    }, { threshold: 0.12 });
+
+    fadeEls.forEach(el => observer.observe(el));
+
+    /* ===== FAQ ACCORDION ===== */
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-question');
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+
+        // Fecha todos os outros
+        faqItems.forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Abre o clicado (se estava fechado)
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    /* ===== VÍDEO LOCAL ===== */
+    // Vídeo hospedado localmente em arquivo/Vídeo-de-vendas.mp4
+    // Para usar YouTube, substitua o <video> por um <iframe> com embed URL
+  </script>
+
+</body>
+</html>
